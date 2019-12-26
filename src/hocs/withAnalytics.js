@@ -1,18 +1,17 @@
 import React, { Component } from "react";
-import { loadGetInitialProps } from "next/dist/lib/utils";
+import { loadGetInitialProps } from "next/dist/next-server/lib/utils";
 import ReactGA from "react-ga";
 
-export default () => Composed => {
+export default () => Composed =>
   class extends Component {
     static getInitialProps(ctx) {
       return loadGetInitialProps(Composed, ctx);
     }
     componentDidMount() {
-      ReactGA.initialize('ID_ANALYTICS');
+      ReactGA.initialize("ID_ANALYTICS");
       ReactGA.pageview(window.location.pathname);
     }
-    render(){
-      return <Composed {...this.props} />
+    render() {
+      return <Composed {...this.props} />;
     }
-  }
-};
+  };
