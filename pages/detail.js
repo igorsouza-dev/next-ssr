@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import withAnalytics from "../src/hocs/withAnalytics";
+import withAnalytics from "~/hocs/withAnalytics";
 
 const Detail = ({ user }) => (
   <div>
